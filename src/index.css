@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 350 100% 91%;
+    --foreground: 337 84% 18%;
+
+    --card: 350 100% 95%;
+    --card-foreground: 337 84% 18%;
+
+    --popover: 350 100% 95%;
+    --popover-foreground: 337 84% 18%;
+
+    --primary: 340 86% 76%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 92% 85%;
+    --secondary-foreground: 337 84% 18%;
+
+    --muted: 50 100% 91%;
+    --muted-foreground: 337 40% 40%;
+
+    --accent: 291 47% 83%;
+    --accent-foreground: 337 84% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 60% 85%;
+    --input: 340 60% 85%;
+    --ring: 340 86% 76%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 350 100% 96%;
+    --sidebar-foreground: 337 84% 18%;
+    --sidebar-primary: 340 86% 76%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 291 47% 90%;
+    --sidebar-accent-foreground: 337 84% 18%;
+    --sidebar-border: 340 60% 85%;
+    --sidebar-ring: 340 86% 76%;
+
+    /* Custom tokens */
+    --birthday-pink: 350 100% 91%;
+    --birthday-rose: 340 86% 76%;
+    --birthday-blue: 199 92% 85%;
+    --birthday-yellow: 50 100% 91%;
+    --birthday-lavender: 291 47% 83%;
+    --birthday-magenta: 337 84% 18%;
+    --birthday-white: 0 0% 100%;
+
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .dark {
+    --background: 350 100% 91%;
+    --foreground: 337 84% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fredoka', sans-serif;
+  }
+  .font-body {
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+/* Flame flicker animation */
+@keyframes flame-flicker {
+  0%, 100% { transform: scaleY(1) scaleX(1) rotate(0deg); opacity: 1; }
+  10% { transform: scaleY(1.05) scaleX(0.95) rotate(-1deg); opacity: 0.95; }
+  20% { transform: scaleY(0.95) scaleX(1.02) rotate(1deg); opacity: 1; }
+  30% { transform: scaleY(1.08) scaleX(0.97) rotate(-0.5deg); opacity: 0.9; }
+  40% { transform: scaleY(0.97) scaleX(1.01) rotate(0.5deg); opacity: 1; }
+  50% { transform: scaleY(1.03) scaleX(0.98) rotate(-1.5deg); opacity: 0.92; }
+  60% { transform: scaleY(0.96) scaleX(1.03) rotate(1deg); opacity: 1; }
+  70% { transform: scaleY(1.06) scaleX(0.96) rotate(-0.5deg); opacity: 0.88; }
+  80% { transform: scaleY(0.98) scaleX(1.01) rotate(0.5deg); opacity: 0.95; }
+  90% { transform: scaleY(1.02) scaleX(0.99) rotate(-1deg); opacity: 1; }
+}
+
+@keyframes flame-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px hsl(50 100% 70% / 0.6)) drop-shadow(0 0 20px hsl(340 86% 76% / 0.3)); }
+  50% { filter: drop-shadow(0 0 14px hsl(50 100% 70% / 0.8)) drop-shadow(0 0 30px hsl(340 86% 76% / 0.5)); }
+}
+
+@keyframes cake-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes letter-wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes firework-rise {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 0.5; }
+}
+
+@keyframes firework-burst {
+  0% { transform: scale(0); opacity: 1; }
+  50% { opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
